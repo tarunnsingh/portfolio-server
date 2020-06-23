@@ -25,6 +25,13 @@ mongoose.connect(
 app.use("/api/user", authRouter);
 app.use("/api/message", messageRouter);
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hiting Portfolio Server",
+    note: "Go to Frontend part",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at Port ${PORT}`);
 });
